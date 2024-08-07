@@ -151,6 +151,21 @@ const messages = defineMessages({
     defaultMessage: 'Page Footer',
     description: 'aria-label for the footer component',
   },
+  termsOfService: {
+    id: 'footer.termsOfService',
+    defaultMessage: 'Terms of Service',
+    description: 'Link text for terms of service in footer.',
+  },
+  privacyPolicy: {
+    id: 'footer.privacyPolicy',
+    defaultMessage: 'Privacy Policy',
+    description: 'Link text for privacy policy in footer.',
+  },
+  about: {
+    id: 'footer.about',
+    defaultMessage: 'About',
+    description: 'Link text for about in footer.',
+  },
 });
 
 export default messages;

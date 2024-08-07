@@ -8,6 +8,10 @@ import { AppContext } from '@edx/frontend-platform/react';
 import messages from './Footer.messages';
 import LanguageSelector from './LanguageSelector';
 
+import facebookIcon from './facebook.png';
+import xIcon from './x.png';
+import instagramIcon from './instagram.png';
+
 ensureConfig([
   'LMS_BASE_URL',
   'LOGO_TRADEMARK_URL',
@@ -49,24 +53,47 @@ class SiteFooter extends React.Component {
         className="footer d-flex border-top py-3 px-4"
       >
         <div className="container-fluid d-flex">
-          <a
-            className="d-block"
-            href={config.LMS_BASE_URL}
-            aria-label={intl.formatMessage(messages['footer.logo.ariaLabel'])}
-          >
-            <img
-              style={{ maxHeight: 45 }}
-              src={logo || config.LOGO_TRADEMARK_URL}
-              alt={intl.formatMessage(messages['footer.logo.altText'])}
-            />
-          </a>
+
+           {/* Links to terms, privacy, and about */}
+           <div className="footer-links">
+  <a href={`${config.LMS_BASE_URL}/tos`} className="footer-link" onClick={this.externalLinkClickHandler}>
+    {intl.formatMessage(messages.termsOfService)}
+  </a>
+  <a href={`${config.LMS_BASE_URL}/privacy`} className="footer-link" onClick={this.externalLinkClickHandler}>
+    {intl.formatMessage(messages.privacyPolicy)}
+  </a>
+  <a href={`${config.LMS_BASE_URL}/about`} className="footer-link" onClick={this.externalLinkClickHandler}>
+    {intl.formatMessage(messages.about)}
+  </a>
+</div>
+
+          
+
+
           <div className="flex-grow-1" />
+
+          {/* Language selector */}
           {showLanguageSelector && (
             <LanguageSelector
               options={supportedLanguages}
               onSubmit={onLanguageSelected}
             />
           )}
+
+          {/* Social media icons */}
+          <div className="social-media">
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+    <img src={facebookIcon} alt="Facebook" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  </a>
+  <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+    <img src={xIcon} alt="X" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <img src={instagramIcon} alt="Instagram" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  </a>
+</div>
+
+         
         </div>
       </footer>
     );
