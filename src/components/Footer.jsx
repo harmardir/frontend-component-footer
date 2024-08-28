@@ -52,7 +52,7 @@ class SiteFooter extends React.Component {
         role="contentinfo"
         className="footer d-flex border-top py-3 px-4"
       >
-        <div className="container-fluid d-flex">
+        <div className="container-fluid d-flex container">
 
            {/* Links to terms, privacy, and about */}
            <div className="footer-links">
