@@ -11,6 +11,8 @@ import LanguageSelector from './LanguageSelector';
 import facebookIcon from './facebook.png';
 import xIcon from './x.png';
 import instagramIcon from './instagram.png';
+import linkedinIcon from './linkedin.png';
+import youtubeIcon from './youtube.png';
 
 ensureConfig([
   'LMS_BASE_URL',
@@ -82,15 +84,23 @@ class SiteFooter extends React.Component {
 
           {/* Social media icons */}
           <div className="social-media">
-  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-    <img src={facebookIcon} alt="Facebook" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
-  </a>
+ 
   <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
     <img src={xIcon} alt="X" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  </a>
+  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+    <img src={linkedinIcon} alt="X" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
   </a>
   <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
     <img src={instagramIcon} alt="Instagram" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
   </a>
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+    <img src={facebookIcon} alt="Facebook" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  </a>
+  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+    <img src={youtubeIcon} alt="Instagram" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  </a>
+  
 </div>
 
          
