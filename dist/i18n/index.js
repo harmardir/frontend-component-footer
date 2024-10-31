@@ -14,7 +14,7 @@ import ititCAMessages from './messages/it_IT.json';
 import ptptCAMessages from './messages/pt_PT.json';
 // no need to import en messages-- they are in the defaultMessage field
 
-const messages = {
+var messages = {
   ar: arMessages,
   'es-419': es419Messages,
   fr: frMessages,
@@ -28,7 +28,7 @@ const messages = {
   uk: ukMessages,
   'de-de': dedeCAMessages,
   'it-it': ititCAMessages,
-  'pt-pt': ptptCAMessages,
+  'pt-pt': ptptCAMessages
 };
-
 export default messages;
+//# sourceMappingURL=index.js.map
