@@ -8,9 +8,7 @@ import { AppContext } from '@edx/frontend-platform/react';
 import messages from './Footer.messages';
 import LanguageSelector from './LanguageSelector';
 
-import facebookIcon from './facebook.png';
 import xIcon from './x.png';
-import instagramIcon from './instagram.png';
 
 ensureConfig([
   'LMS_BASE_URL',
@@ -41,7 +39,6 @@ class SiteFooter extends React.Component {
     const {
       supportedLanguages,
       onLanguageSelected,
-      logo,
       intl,
     } = this.props;
     const showLanguageSelector = supportedLanguages.length > 0 && onLanguageSelected;
@@ -50,50 +47,36 @@ class SiteFooter extends React.Component {
     return (
       <footer
         role="contentinfo"
-        className="footer d-flex border-top py-3 px-4"
+        className="footer bg-green-600 text-white py-6 px-4 flex flex-col md:flex-row md:justify-between md:items-center"
       >
-        <div className="container-fluid d-flex container">
+        {/* Social Media Icon and Contact Info */}
+        <div className="flex flex-col items-center md:items-start">
+          <img src={xIcon} alt="X" className="w-12 h-12 mb-2" />
+          <p className="text-sm font-semibold">info@arabacinet.org</p>
+        </div>
 
-           {/* Links to terms, privacy, and about */}
-           <div className="footer-links">
-  <a href={`${config.LMS_BASE_URL}/tos`} className="footer-link" onClick={this.externalLinkClickHandler}>
-    {intl.formatMessage(messages.termsOfService)}
-  </a>
-  <a href={`${config.LMS_BASE_URL}/privacy`} className="footer-link" onClick={this.externalLinkClickHandler}>
-    {intl.formatMessage(messages.privacyPolicy)}
-  </a>
-  <a href={`${config.LMS_BASE_URL}/about`} className="footer-link" onClick={this.externalLinkClickHandler}>
-    {intl.formatMessage(messages.about)}
-  </a>
-</div>
-
-          
-
-
-          <div className="flex-grow-1" />
-
-          {/* Language selector */}
-          {showLanguageSelector && (
-            <LanguageSelector
-              options={supportedLanguages}
-              onSubmit={onLanguageSelected}
-            />
-          )}
-
-          {/* Social media icons */}
-          <div className="social-media">
-  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-    <img src={facebookIcon} alt="Facebook" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
-  </a>
-  <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
-    <img src={xIcon} alt="X" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
-  </a>
-  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-    <img src={instagramIcon} alt="Instagram" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
-  </a>
-</div>
-
-         
+        {/* Footer Links and Copyright */}
+        <div className="mt-4 md:mt-0 text-center md:text-right">
+          <div className="text-sm space-x-4 md:space-x-2">
+            <a
+              href={`${config.LMS_BASE_URL}/tos`}
+              className="footer-link hover:underline"
+              onClick={this.externalLinkClickHandler}
+            >
+              {intl.formatMessage(messages.termsOfService)}
+            </a>
+            <span className="hidden md:inline">|</span>
+            <a
+              href={`${config.LMS_BASE_URL}/privacy`}
+              className="footer-link hover:underline"
+              onClick={this.externalLinkClickHandler}
+            >
+              {intl.formatMessage(messages.privacyPolicy)}
+            </a>
+          </div>
+          <p className="mt-2 text-xs">
+            &copy; 2025 الشبكة العربية للنزاهة ومكافحة الفساد. جميع الحقوق محفوظة.
+          </p>
         </div>
       </footer>
     );
@@ -104,7 +87,6 @@ SiteFooter.contextType = AppContext;
 
 SiteFooter.propTypes = {
   intl: intlShape.isRequired,
-  logo: PropTypes.string,
   onLanguageSelected: PropTypes.func,
   supportedLanguages: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
@@ -113,7 +95,6 @@ SiteFooter.propTypes = {
 };
 
 SiteFooter.defaultProps = {
-  logo: undefined,
   onLanguageSelected: undefined,
   supportedLanguages: [],
 };
