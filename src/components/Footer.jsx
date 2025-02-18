@@ -45,36 +45,35 @@ class SiteFooter extends React.Component {
     const { config } = this.context;
 
     return (
-      <footer
-        role="contentinfo"
-        className="footer bg-green-600 text-white py-6 px-4 flex flex-col md:flex-row md:justify-between md:items-center"
-      >
+      <footer role="contentinfo" className="site-footer">
         {/* Social Media Icon and Contact Info */}
-        <div className="flex flex-col items-center md:items-start">
-          <img src={xIcon} alt="X" className="w-12 h-12 mb-2" />
-          <p className="text-sm font-semibold">info@arabacinet.org</p>
+        <div className="footer-contact">
+        <a href="https://x.com/Arab_ACINET" target="_blank" rel="noopener noreferrer">
+              <img src={xIcon} alt="X" className="footer-icon" />
+        </a>
+          <p className="footer-email">info@arabacinet.org</p>
         </div>
 
         {/* Footer Links and Copyright */}
-        <div className="mt-4 md:mt-0 text-center md:text-right">
-          <div className="text-sm space-x-4 md:space-x-2">
+        <div className="footer-links-container">
+          <div className="footer-links">
             <a
               href={`${config.LMS_BASE_URL}/tos`}
-              className="footer-link hover:underline"
+              className="footer-link"
               onClick={this.externalLinkClickHandler}
             >
               {intl.formatMessage(messages.termsOfService)}
             </a>
-            <span className="hidden md:inline">|</span>
+            <span className="footer-separator">|</span>
             <a
               href={`${config.LMS_BASE_URL}/privacy`}
-              className="footer-link hover:underline"
+              className="footer-link"
               onClick={this.externalLinkClickHandler}
             >
               {intl.formatMessage(messages.privacyPolicy)}
             </a>
           </div>
-          <p className="mt-2 text-xs">
+          <p className="footer-copyright">
             &copy; 2025 الشبكة العربية للنزاهة ومكافحة الفساد. جميع الحقوق محفوظة.
           </p>
         </div>
