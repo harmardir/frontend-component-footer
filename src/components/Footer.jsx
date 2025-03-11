@@ -9,6 +9,7 @@ import messages from './Footer.messages';
 import LanguageSelector from './LanguageSelector';
 
 import xIcon from './x.png';
+import emailIcon from './email.png';
 
 ensureConfig([
   'LMS_BASE_URL',
@@ -48,14 +49,22 @@ class SiteFooter extends React.Component {
       <footer role="contentinfo" className="site-footer">
         {/* Social Media Icon and Contact Info */}
         <div className="footer-contact">
-        <a href="https://x.com/Arab_ACINET" target="_blank" rel="noopener noreferrer">
+          <p className="footer-contact-title">تواصلوا معنا</p>
+          <div className="footer-social">
+            <a href="https://x.com/Arab_ACINET" target="_blank" rel="noopener noreferrer" className="footer-social-item">
               <img src={xIcon} alt="X" className="footer-icon" />
-        </a>
-          <p className="footer-email">info@arabacinet.org</p>
+              <span className="footer-social-text">@Arab_ACINET</span>
+            </a>
+          </div>
+          <div className="footer-email-container">
+            <img src={emailIcon} alt="Email" className="footer-icon" />
+            <p className="footer-email">info@arabacinet.org</p>
+          </div>
         </div>
 
         {/* Footer Links and Copyright */}
         <div className="footer-links-container">
+          <p className="footer-title">البوابة الالكترونية للشبكة</p>
           <div className="footer-links">
             <a
               href={`${config.LMS_BASE_URL}/tos`}
