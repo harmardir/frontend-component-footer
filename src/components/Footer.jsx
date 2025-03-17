@@ -64,7 +64,14 @@ class SiteFooter extends React.Component {
 
         {/* Footer Links and Copyright */}
         <div className="footer-links-container">
-          <p className="footer-title">البوابة الالكترونية للشبكة</p>
+        <a 
+          href="https://www.arabacinet.org/ar/home" 
+          className="footer-title" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          >
+             البوابة الالكترونية للشبكة
+          </a>
           <div className="footer-links">
             <a
               href={`${config.LMS_BASE_URL}/tos`}
