@@ -47,51 +47,54 @@ class SiteFooter extends React.Component {
 
     return (
       <footer role="contentinfo" className="site-footer">
-        {/* Social Media Icon and Contact Info */}
-        <div className="footer-contact">
-          <p className="footer-contact-title">تواصلوا معنا</p>
-          <div className="footer-social">
-            <a href="https://x.com/Arab_ACINET" target="_blank" rel="noopener noreferrer" className="footer-social-item">
-              <img src={xIcon} alt="X" className="footer-icon" />
-              <span className="footer-social-text">@Arab_ACINET</span>
-            </a>
+        {/* Wrapper to center content with max-width 1440px */}
+        <div className="footer-container">
+          {/* Social Media Icon and Contact Info */}
+          <div className="footer-contact">
+            <p className="footer-contact-title">تواصلوا معنا</p>
+            <div className="footer-social">
+              <a href="https://x.com/Arab_ACINET" target="_blank" rel="noopener noreferrer" className="footer-social-item">
+                <img src={xIcon} alt="X" className="footer-icon" />
+                <span className="footer-social-text">@Arab_ACINET</span>
+              </a>
+            </div>
+            <div className="footer-email-container">
+              <img src={emailIcon} alt="Email" className="footer-icon" />
+              <p className="footer-email">info@arabacinet.org</p>
+            </div>
           </div>
-          <div className="footer-email-container">
-            <img src={emailIcon} alt="Email" className="footer-icon" />
-            <p className="footer-email">info@arabacinet.org</p>
-          </div>
-        </div>
 
-        {/* Footer Links and Copyright */}
-        <div className="footer-links-container">
-        <a 
-          href="https://www.arabacinet.org/ar/home" 
-          className="footer-title" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          >
-             البوابة الالكترونية للشبكة
-          </a>
-          <div className="footer-links">
-            <a
-              href={`${config.LMS_BASE_URL}/tos`}
-              className="footer-link"
-              onClick={this.externalLinkClickHandler}
+          {/* Footer Links and Copyright */}
+          <div className="footer-links-container">
+            <a 
+              href="https://www.arabacinet.org/ar/home" 
+              className="footer-title" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              {intl.formatMessage(messages.termsOfService)}
+              البوابة الالكترونية للشبكة
             </a>
-            <span className="footer-separator">|</span>
-            <a
-              href={`${config.LMS_BASE_URL}/privacy`}
-              className="footer-link"
-              onClick={this.externalLinkClickHandler}
-            >
-              {intl.formatMessage(messages.privacyPolicy)}
-            </a>
+            <div className="footer-links">
+              <a
+                href={`${config.LMS_BASE_URL}/tos`}
+                className="footer-link"
+                onClick={this.externalLinkClickHandler}
+              >
+                {intl.formatMessage(messages.termsOfService)}
+              </a>
+              <span className="footer-separator">|</span>
+              <a
+                href={`${config.LMS_BASE_URL}/privacy`}
+                className="footer-link"
+                onClick={this.externalLinkClickHandler}
+              >
+                {intl.formatMessage(messages.privacyPolicy)}
+              </a>
+            </div>
+            <p className="footer-copyright">
+            جميع الحقوق محفوظة &copy; 2025 الشبكة العربية للنزاهة ومكافحة الفساد.
+            </p>
           </div>
-          <p className="footer-copyright">
-            &copy; 2025 الشبكة العربية للنزاهة ومكافحة الفساد. جميع الحقوق محفوظة.
-          </p>
         </div>
       </footer>
     );
