@@ -64,7 +64,7 @@ class SiteFooter extends React.Component {
   <a href={`${config.LMS_BASE_URL}/privacy`} className="footer-link" onClick={this.externalLinkClickHandler}>
     {intl.formatMessage(messages.privacyPolicy)}
   </a>
-  <a href={`${config.LMS_BASE_URL}/about`} className="footer-link" onClick={this.externalLinkClickHandler}>
+  <a href="https://savolaworld.com/Makeen.php" className="footer-link" onClick={this.externalLinkClickHandler}>
     {intl.formatMessage(messages.about)}
   </a>
 </div>
@@ -85,19 +85,19 @@ class SiteFooter extends React.Component {
           {/* Social media icons */}
           <div className="social-media">
  
-  <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://x.com/savolaworld?lang=en" target="_blank" rel="noopener noreferrer">
     <img src={xIcon} alt="X" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
   </a>
-  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.linkedin.com/company/savolaworld/" target="_blank" rel="noopener noreferrer">
     <img src={linkedinIcon} alt="X" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
   </a>
-  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.instagram.com/savolaworld/#" target="_blank" rel="noopener noreferrer">
     <img src={instagramIcon} alt="Instagram" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
   </a>
-  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.facebook.com/share/19a69yGvsH/" target="_blank" rel="noopener noreferrer">
     <img src={facebookIcon} alt="Facebook" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
   </a>
-  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.youtube.com/channel/UCVAsDJMQH3hEaIjw1MOj49w" target="_blank" rel="noopener noreferrer">
     <img src={youtubeIcon} alt="Instagram" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
   </a>
   
